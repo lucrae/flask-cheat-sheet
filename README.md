@@ -1,4 +1,4 @@
-# :scroll: Django Cheat Sheet
+# Flask Cheat Sheet
 A cheat-sheet for creating web apps with the Flask framework using the Python language.
 
 - https://damyanon.net/post/flask-series-environment/
