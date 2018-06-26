@@ -25,6 +25,9 @@ if __name__ == '__main__':
 run.py
 project/
 	__init__.py
+	config.py
+	forms.py
+	models.py
 	admin/
 		__init__.py
 		routes.py
