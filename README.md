@@ -1,9 +1,6 @@
 # Flask Cheat Sheet
 A cheat-sheet for creating web apps with the Flask framework using the Python language.
 
-- https://damyanon.net/post/flask-series-environment/
-- https://stackoverflow.com/questions/9845102/using-mysql-in-flask
-
 ## Creating a Simple App
 - Create a module called `app.py`:
 ```python
@@ -192,7 +189,7 @@ class Post(db.Model):
 from project.models improt db
 
 app = Flask(__name__)
-app.config.from_object)config.DevelopmentConfig)
+app.config.from_object(config.DevelopmentConfig)
 with app.app_context():
 	db.init_app()
 ```
@@ -267,7 +264,16 @@ from project.models import login_manager
 with app.app_context():
 	login_manager.init_app(app)
 ```
+## Changing the DBMS to PostgreSQL
+- https://stackoverflow.com/questions/27766794/switching-from-sqlite-to-mysql-with-flask-sqlalchemy
+- new URI
+- psycopg2
+- sudo -u postgres psql
+- ALTER USER postgres PASSWORD 'password';
+
 ## Creating forms
 - https://damyanon.net/post/flask-series-views/
 - https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-iii-web-forms
 - https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-v-user-logins
+- https://damyanon.net/post/flask-series-environment/
+- https://stackoverflow.com/questions/9845102/using-mysql-in-flask
