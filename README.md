@@ -264,16 +264,33 @@ from project.models import login_manager
 with app.app_context():
 	login_manager.init_app(app)
 ```
-## Changing the DBMS to PostgreSQL
-- https://stackoverflow.com/questions/27766794/switching-from-sqlite-to-mysql-with-flask-sqlalchemy
-- new URI
-- psycopg2
-- sudo -u postgres psql
-- ALTER USER postgres PASSWORD 'password';
+## Connecting to a MySQL database
+- Although `SQLite` is fine for a simple development server, the databases of production servers are often better suited to a more full-featured DBMS like `MySQL`.
+  
+- Install `MySQL`:
+```bash
+$ sudo apt-get install mysql-server
+```
+- Access the `MySQL` shell:
+```bash
+$ mysql -u root -p
+```
+*Note:* `root` *of MySQL is not the same as the* `root` of the OS.
 
-## Creating forms
-- https://damyanon.net/post/flask-series-views/
-- https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-iii-web-forms
-- https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-v-user-logins
-- https://damyanon.net/post/flask-series-environment/
-- https://stackoverflow.com/questions/9845102/using-mysql-in-flask
+- Show databases with:
+```sql
+SHOW DATABASES;
+```
+- Create a database:
+```sql
+CREATE DATABASE database_name;
+```
+- Establish connection with `SQLAlchemy`, install `pymysql`:
+```bash
+$ pip install pymysql
+```
+- And within the config object in `config.py` include:
+```python
+SQLALCHEMY_DATABASE_URI  =  'mysql+pymysql://root:password@localhost/database';
+```
+- For more standard commands: the [Digital Ocean MySQL tutorial](https://www.digitalocean.com/community/tutorials/a-basic-mysql-tutorial) is useful.
