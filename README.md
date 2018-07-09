@@ -281,7 +281,20 @@ with app.app_context():
 ```bash
 $ sudo apt-get install mysql-server
 ```
-- Access the `MySQL` shell:
+#### If not prompted to enter a password:
+```bash
+$ sudo mysql_secure_installation
+```
+- And then:
+```bash
+$ sudo mysql -u root -p
+```
+```sql
+CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON database_name.* TO 'newuser'@'localhost';
+```
+
+#### Access the `MySQL` shell:
 ```bash
 $ mysql -u root -p
 ```
