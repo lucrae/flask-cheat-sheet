@@ -1,6 +1,16 @@
 # Flask Cheat Sheet
 A cheat-sheet for creating web apps with the Flask framework using the Python language.
 
+## Contents
+- [Creating a Simple App](#creating-a-simple-app)
+- [Structuring an Application with Blueprints](#structuring-an-application-with-blueprints)
+- [Creating Object-Based Configuration](#creating-object-based-configuration)
+- [Using the Jinja2 Template Engine](#using-the-jinja2-template-engine)
+- [Creating Models with SQLAlchemy](#creating-models-with-sqlalchemy)
+- [Using Database Migrations](#using-database-migrations)
+- [Creating a Login Manager](#creating-a-login-manager)
+- [Connecting to a MySQL database](#connecting-to-a-mysql-database)
+
 ## Creating a Simple App
 - Create a module called `app.py`:
 ```python
@@ -246,7 +256,7 @@ $ flask db migrate
 ```
 $ flask db upgrade
 ```
-## Creating a LoginManager
+## Creating a Login Manager
 - In `models.py` include:
 ```python
 from flask_login import LoginManager, UserMixin
