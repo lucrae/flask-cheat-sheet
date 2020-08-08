@@ -49,7 +49,7 @@ project/
 ```
 - In `run.py`:
 ```python
-from threechan import app
+from project import app
 
 if __name__=='__main__':
 	app.run()
@@ -75,7 +75,7 @@ main = Blueprint('main', __name__)
 def index():
 	return "Hello, World! This is the main page."
 ```
-- In `rwochan/admin/routes.py`:
+- In `project/admin/routes.py`:
 ```python
 from flask import Blueprint
 
